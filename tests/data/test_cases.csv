@@ -1,0 +1,11 @@
+test_id,test_title,description,amount_raw,category,date_raw,expected_valid,expected_error_field,expected_error_message,expected_amount
+TC-CSV-01,Valid standard expense,Grocery shopping,45.50,Food,2026-10-15,true,,,45.50
+TC-CSV-02,Missing description error,"   ",20.00,Food,2026-10-15,false,description,Description is required.,
+TC-CSV-03,Negative amount error,Refund,-15.00,Bills,2026-10-15,false,amount,Amount must be greater than $0.,
+TC-CSV-04,Non-numeric amount error,Coffee,twenty,Food,2026-10-15,false,amount,Enter a valid amount.,
+TC-CSV-05,Zero amount boundary error,Free sample,0.00,Other,2026-10-15,false,amount,Amount must be greater than $0.,
+TC-CSV-06,Amount exceeds maximum boundary,Luxury Yacht,1000000.01,Shopping,2026-10-15,false,amount,That amount looks too large.,
+TC-CSV-07,Invalid category error,Movie Ticket,12.00,FunAndGames,2026-10-15,false,category,Choose a valid category.,
+TC-CSV-08,Malformed date format error,Lunch,15.00,Food,15/10/2026,false,date,Enter a valid date.,
+TC-CSV-09,Missing date error,Dinner,30.00,Food,,false,date,Date is required.,
+TC-CSV-10,Valid minimum cent boundary,Penny candy,0.01,Other,2026-10-15,true,,,0.01

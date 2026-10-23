@@ -119,7 +119,7 @@ pytest -v --tb=short
 | Requirement | Status | Evidence / Notes |
 |---|---|---|
 | Excel test-case sheet with ≥ 4 test cases | **FAIL** | No `.xlsx` or `.xls` file exists anywhere in the repository |
-| Consume test data from an external CSV | **FAIL** | No CSV data file in `tests/`. `data_driven` marker declared in `pytest.ini` but **zero** tests use it |
+| Consume test data from an external CSV | **PASS** | Created `tests/data/test_cases.csv` with 10 records; consumed dynamically by `tests/test_data_driven.py` under `@pytest.mark.data_driven` (14 passing tests) |
 
 ### Task 4 — Parallel Execution, Suites, Groups, Ordering
 
@@ -169,8 +169,8 @@ pytest -v --tb=short
 | D1 | **High** | `pytest.ini` | `addopts` lacks `-n auto`. Parallel execution is installed but not activated. |
 | D2 | **High** | `tests/` | Markers `regression`, `formatting`, `stats`, `data_driven` declared. `formatting` and `stats` now active. |
 | D3 | **Resolved** | `test_stats.py` | Resolved: Restructured into 4 classes (`TestTotalOf`, `TestExpensesInMonth`, `TestCategoryBreakdown`, `TestMonthlyTrend`) with 34 methods, 36 passing tests, markers, and order. |
-| D4 | **High** | Repository | No Excel test-case sheet (`.xlsx`) exists anywhere. Task 3 entirely missing. |
-| D5 | **High** | Repository | No external CSV data file. `data_driven` marker is orphaned. |
+| D4 | **High** | Repository | No Excel test-case sheet (`.xlsx`) exists anywhere. Task 3 partially implemented. |
+| D5 | **Resolved** | Repository | Resolved: Created `tests/data/test_cases.csv` and `tests/test_data_driven.py` with 14 passing tests. |
 | D6 | **High** | Repository | No setup video recorded or linked. Task 1 video deliverable is missing. |
 | D7 | **Resolved** | `tests/` | Resolved: Created `tests/test_formatting.py` with 4 classes, 33 methods, 63 passing tests. |
 | D8 | **Medium** | `test_module_models.py` | No `@pytest.mark.parametrize` used — all boundary cases are separate methods. |
@@ -190,7 +190,7 @@ pytest -v --tb=short
 | Module 3 tests restructured (`tests/test_stats.py`) | **Created and verified** (36 passed) |
 | Test design notes (`docs/test_design_notes.md`) | **Created and verified** |
 | Excel test-case sheet (`docs/test_cases.xlsx`) | **Completely missing** |
-| External CSV data file (`tests/data/test_cases.csv`) | **Completely missing** |
+| External CSV data file (`tests/data/test_cases.csv`) | **Created and verified** (14 passed) |
 | `@pytest.mark.parametrize` in Module 1 | Not present |
 | Parallel execution configured in `pytest.ini` | Plugin present, not activated |
 | `regression` / `stats` / `formatting` markers actively used | Declared but unused |

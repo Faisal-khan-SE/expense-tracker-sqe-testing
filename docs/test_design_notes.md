@@ -280,7 +280,9 @@ This matrix maps every class and function across the three targeted modules to i
 | `stats` | `TestCategoryBreakdown` | `category_breakdown` | ECP, Geometry BVA | 9 | `STA-CAT-01` .. `08` | `tests/test_stats.py` | M-Ehtasham-SE | **PASSED** (9 tests) |
 | `stats` | `TestMonthlyTrend` | `monthly_trend` | ECP, Scaling BVA | 9 | `STA-TRD-01` .. `08` | `tests/test_stats.py` | M-Ehtasham-SE | **PASSED** (9 tests) |
 | **Module 3 Subtotal** | **4 Test Classes** | **4 Functions** | **ECP, BVA** | **34 (36 run)** | | | **M-Ehtasham-SE** | **PASSED** |
-| **GRAND TOTAL** | **13 Test Classes** | **15 Functions/Classes** | | **102 (134 run)**| | | **2 Verified Team Members**| **100% PASS** |
+| `data_driven` | `TestDataDrivenExpenseValidation` | `validate_expense` (CSV-driven) | Dynamic Data-Driven Parameterization | 5 (14 run) | `TC-CSV-01` .. `10` | `tests/test_data_driven.py` | M-Ehtasham-SE | **PASSED** (10 data rows + 4 schema tests) |
+| **Task 3 Subtotal** | **1 Test Class** | **1 Function (CSV-driven)** | **Data-Driven Parameterization** | **5 (14 run)** | | `tests/data/test_cases.csv` | **M-Ehtasham-SE** | **PASSED** |
+| **GRAND TOTAL** | **14 Test Classes** | **16 Functions/Classes** | | **107 (148 run)**| | | **2 Verified Team Members**| **100% PASS** |
 
 ---
 

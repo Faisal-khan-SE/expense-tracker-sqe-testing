@@ -66,7 +66,17 @@ recreated empty on the next request.
 
 ```bash
 pip install -r requirements-dev.txt
+
+# Run full test suite (254 passed)
 pytest -v
+
+# Run by markers / suites
+pytest -m models -v         # Models tests (Module 1)
+pytest -m formatting -v     # Formatting tests (Module 2)
+pytest -m stats -v          # Statistics tests (Module 3)
+pytest -m data_driven -v    # CSV-driven automated tests (Task 3)
+pytest -m smoke -v          # Quick critical smoke tests
+pytest -m regression -v     # Full regression test suite
 ```
 
 ## Testing the app manually
