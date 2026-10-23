@@ -106,13 +106,13 @@ pytest -v --tb=short
 
 | Requirement | Status | Evidence / Notes |
 |---|---|---|
-| Select three different application modules | **PARTIAL** | Only **one** module (`models.py`) formally covered (commit c3581bd). Two more required. |
-| Apply ECP, BVA, and other techniques | **PASS** (Module 1 only) | `test_module_models.py` applies ECP (invalid category, non-numeric amount) and BVA (amount boundaries 0/0.01/1_000_000/1_000_000.01, description length 120/121 chars) |
+| Select three different application modules | **PARTIAL** | Two modules formally covered (`models.py`, `formatting.py`). One remaining (`stats.py`). |
+| Apply ECP, BVA, and other techniques | **PASS** (Modules 1 & 2) | `test_module_models.py` and `test_formatting.py` apply rigorous ECP, BVA, parameterization, and exception testing |
 | Document test design notes per module | **PASS** | Complete specification created at [docs/test_design_notes.md](file:///d:/expense-tracker-sqe-testing/docs/test_design_notes.md) covering all 3 modules (98 test cases designed, ECP/BVA tables, constraints, ambiguity analysis, and contributor matrix) |
-| 5–10 automated unit tests per function | **PASS** (Module 1 only) | `validate_expense`: 14; `Expense`/`Filters`: 5; `add`/`get`: 6; `update`: 5; `delete`: 5 |
-| 5–10 automated unit tests per class/module | **PASS** (Module 1 only) | Each class in `test_module_models.py` meets the ≥ 5 threshold |
-| Module 2 tests | **FAIL** | No dedicated test file for Module 2 (recommended: `formatting.py`) |
-| Module 3 tests | **FAIL** | No dedicated test class for Module 3 (recommended: `stats.py`) |
+| 5–10 automated unit tests per function | **PASS** (Modules 1 & 2) | `validate_expense`: 14; `Expense`/`Filters`: 5; `add`/`get`: 6; `update`: 5; `delete`: 5; `format_currency`: 8 (16); `format_date`: 9 (14); `format_relative`: 9 (26); `format_local`: 7 |
+| 5–10 automated unit tests per class/module | **PASS** (Modules 1 & 2) | Each class meets the ≥ 5 threshold (Module 1: 34 tests; Module 2: 33 methods, 63 test executions) |
+| Module 2 tests | **PASS** | Implemented in `tests/test_formatting.py` with 4 classes, 33 methods, 63 passing tests |
+| Module 3 tests | **FAIL** | No dedicated test class for Module 3 (recommended: `stats.py` restructure) |
 
 ### Task 3 — Excel Test-Case Sheet and CSV Data Source
 
@@ -172,7 +172,7 @@ pytest -v --tb=short
 | D4 | **High** | Repository | No Excel test-case sheet (`.xlsx`) exists anywhere. Task 3 entirely missing. |
 | D5 | **High** | Repository | No external CSV data file. `data_driven` marker is orphaned. |
 | D6 | **High** | Repository | No setup video recorded or linked. Task 1 video deliverable is missing. |
-| D7 | **Medium** | `tests/` | No Module 2 test file (`test_formatting.py`) exists at all. |
+| D7 | **Resolved** | `tests/` | Resolved: Created `tests/test_formatting.py` with 4 classes, 33 methods, 63 passing tests. |
 | D8 | **Medium** | `test_module_models.py` | No `@pytest.mark.parametrize` used — all boundary cases are separate methods. |
 | D9 | **Resolved** | `docs/` | Resolved: Created comprehensive ECP/BVA design specification in `docs/test_design_notes.md`. |
 | D10 | Low | `test_validation.py` | Largely duplicates `TestFunctionValidateExpense` coverage. Not broken but redundant. |
@@ -186,7 +186,7 @@ pytest -v --tb=short
 |---|---|
 | `docs/assignment_audit.md` (this file) | Created now |
 | Setup / demo video | **Completely missing** |
-| Module 2 test file (`tests/test_formatting.py`) | **Completely missing** |
+| Module 2 test file (`tests/test_formatting.py`) | **Created and verified** (63 passed) |
 | Module 3 tests restructured (`tests/test_stats.py`) | Exists but inadequate |
 | Test design notes (`docs/test_design_notes.md`) | **Created and verified** |
 | Excel test-case sheet (`docs/test_cases.xlsx`) | **Completely missing** |

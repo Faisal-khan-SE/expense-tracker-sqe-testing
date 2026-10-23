@@ -270,17 +270,17 @@ This matrix maps every class and function across the three targeted modules to i
 | `models` | `TestFunctionUpdateExpense` | `update_expense` | ECP, State Mutation | 5 | `MOD-UPD-01` .. `05` | `tests/test_module_models.py` | Muhammad Faisal | **PASSED** (Baseline) |
 | `models` | `TestFunctionDeleteExpense` | `delete_expense` | ECP, Idempotency | 5 | `MOD-DEL-01` .. `05` | `tests/test_module_models.py` | Muhammad Faisal | **PASSED** (Baseline) |
 | **Module 1 Subtotal** | **5 Test Classes** | **7 Functions/Classes** | **ECP, BVA** | **35** | | | **Muhammad Faisal** | **Verified** |
-| `formatting` | `TestFormatCurrency` | `format_currency` | ECP, BVA | 8 | `FMT-CUR-01` .. `08` | `tests/test_formatting.py` (Planned) | M-Ehtasham-SE | Planned |
-| `formatting` | `TestFormatDate` | `format_date` | ECP, BVA, Exception | 8 | `FMT-DAT-01` .. `08` | `tests/test_formatting.py` (Planned) | M-Ehtasham-SE | Planned |
-| `formatting` | `TestFormatRelative` | `format_relative` | ECP, BVA Thresholds | 12 | `FMT-REL-01` .. `12` | `tests/test_formatting.py` (Planned) | M-Ehtasham-SE | Planned |
-| `formatting` | `TestFormatLocal` | `format_local` | ECP, BVA (Time boundaries)| 5 | `FMT-LOC-01` .. `05` | `tests/test_formatting.py` (Planned) | M-Ehtasham-SE | Planned |
-| **Module 2 Subtotal** | **4 Test Classes** | **4 Functions** | **ECP, BVA** | **33** | | | **M-Ehtasham-SE** | **Planned** |
+| `formatting` | `TestFormatCurrency` | `format_currency` | ECP, BVA | 8 | `FMT-CUR-01` .. `08` | `tests/test_formatting.py` | M-Ehtasham-SE | **PASSED** (16 parameterized) |
+| `formatting` | `TestFormatDate` | `format_date` | ECP, BVA, Exception | 9 | `FMT-DAT-01` .. `08` | `tests/test_formatting.py` | M-Ehtasham-SE | **PASSED** (14 parameterized) |
+| `formatting` | `TestFormatRelative` | `format_relative` | ECP, BVA Thresholds | 9 | `FMT-REL-01` .. `12` | `tests/test_formatting.py` | M-Ehtasham-SE | **PASSED** (26 parameterized) |
+| `formatting` | `TestFormatLocal` | `format_local` | ECP, BVA (Time boundaries)| 7 | `FMT-LOC-01` .. `05` | `tests/test_formatting.py` | M-Ehtasham-SE | **PASSED** (7 tests) |
+| **Module 2 Subtotal** | **4 Test Classes** | **4 Functions** | **ECP, BVA** | **33 (63 run)**| | | **M-Ehtasham-SE** | **PASSED** |
 | `stats` | `TestTotalOf` | `total_of` | ECP, BVA | 6 | `STA-TOT-01` .. `06` | `tests/test_stats.py` (Restructure) | M-Ehtasham-SE | Planned |
 | `stats` | `TestExpensesInMonth` | `expenses_in_month` | ECP, BVA (Month edges)| 8 | `STA-EIM-01` .. `08` | `tests/test_stats.py` (Restructure) | M-Ehtasham-SE | Planned |
 | `stats` | `TestCategoryBreakdown` | `category_breakdown` | ECP, Geometry BVA | 8 | `STA-CAT-01` .. `08` | `tests/test_stats.py` (Restructure) | M-Ehtasham-SE | Planned |
 | `stats` | `TestMonthlyTrend` | `monthly_trend` | ECP, Scaling BVA | 8 | `STA-TRD-01` .. `08` | `tests/test_stats.py` (Restructure) | M-Ehtasham-SE | Planned |
 | **Module 3 Subtotal** | **4 Test Classes** | **4 Functions** | **ECP, BVA** | **30** | | | **M-Ehtasham-SE** | **Planned** |
-| **GRAND TOTAL** | **13 Test Classes** | **15 Functions/Classes** | | **98** | | | **2 Verified Team Members**| |
+| **GRAND TOTAL** | **13 Test Classes** | **15 Functions/Classes** | | **98 (128 run)**| | | **2 Verified Team Members**| |
 
 ---
 
