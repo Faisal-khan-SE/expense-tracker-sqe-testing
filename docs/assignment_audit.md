@@ -106,13 +106,13 @@ pytest -v --tb=short
 
 | Requirement | Status | Evidence / Notes |
 |---|---|---|
-| Select three different application modules | **PARTIAL** | Two modules formally covered (`models.py`, `formatting.py`). One remaining (`stats.py`). |
-| Apply ECP, BVA, and other techniques | **PASS** (Modules 1 & 2) | `test_module_models.py` and `test_formatting.py` apply rigorous ECP, BVA, parameterization, and exception testing |
-| Document test design notes per module | **PASS** | Complete specification created at [docs/test_design_notes.md](file:///d:/expense-tracker-sqe-testing/docs/test_design_notes.md) covering all 3 modules (98 test cases designed, ECP/BVA tables, constraints, ambiguity analysis, and contributor matrix) |
-| 5–10 automated unit tests per function | **PASS** (Modules 1 & 2) | `validate_expense`: 14; `Expense`/`Filters`: 5; `add`/`get`: 6; `update`: 5; `delete`: 5; `format_currency`: 8 (16); `format_date`: 9 (14); `format_relative`: 9 (26); `format_local`: 7 |
-| 5–10 automated unit tests per class/module | **PASS** (Modules 1 & 2) | Each class meets the ≥ 5 threshold (Module 1: 34 tests; Module 2: 33 methods, 63 test executions) |
+| Select three different application modules | **PASS** | Three modules formally covered: Module 1 (`models.py`), Module 2 (`formatting.py`), Module 3 (`stats.py`) |
+| Apply ECP, BVA, and other techniques | **PASS** (Modules 1, 2 & 3) | `test_module_models.py`, `test_formatting.py`, and `test_stats.py` apply rigorous ECP, BVA, parameterization, and calendar/geometry boundary analysis |
+| Document test design notes per module | **PASS** | Complete specification created at [docs/test_design_notes.md](file:///d:/expense-tracker-sqe-testing/docs/test_design_notes.md) covering all 3 modules (98+ test cases designed, ECP/BVA tables, constraints, ambiguity analysis, and contributor matrix) |
+| 5–10 automated unit tests per function | **PASS** (Modules 1, 2 & 3) | All targeted functions have 5–14 unit test methods: `validate_expense`: 14; `Expense`/`Filters`: 5; `add`/`get`: 6; `update`: 5; `delete`: 5; `format_currency`: 8; `format_date`: 9; `format_relative`: 9; `format_local`: 7; `total_of`: 7; `expenses_in_month`: 9; `category_breakdown`: 9; `monthly_trend`: 9 |
+| 5–10 automated unit tests per class/module | **PASS** (Modules 1, 2 & 3) | Each class meets the ≥ 5 threshold (Module 1: 34 tests; Module 2: 33 methods, 63 test executions; Module 3: 34 methods, 36 test executions) |
 | Module 2 tests | **PASS** | Implemented in `tests/test_formatting.py` with 4 classes, 33 methods, 63 passing tests |
-| Module 3 tests | **FAIL** | No dedicated test class for Module 3 (recommended: `stats.py` restructure) |
+| Module 3 tests | **PASS** | Implemented in `tests/test_stats.py` with 4 classes, 34 methods, 36 passing tests |
 
 ### Task 3 — Excel Test-Case Sheet and CSV Data Source
 
@@ -167,8 +167,8 @@ pytest -v --tb=short
 | ID | Severity | Location | Issue |
 |---|---|---|---|
 | D1 | **High** | `pytest.ini` | `addopts` lacks `-n auto`. Parallel execution is installed but not activated. |
-| D2 | **High** | `tests/` | Markers `regression`, `formatting`, `stats`, `data_driven` declared but **zero** tests use them. |
-| D3 | **High** | `test_stats.py` | 7 bare functions — no class, no markers, no `@pytest.mark.order`. Must be restructured. |
+| D2 | **High** | `tests/` | Markers `regression`, `formatting`, `stats`, `data_driven` declared. `formatting` and `stats` now active. |
+| D3 | **Resolved** | `test_stats.py` | Resolved: Restructured into 4 classes (`TestTotalOf`, `TestExpensesInMonth`, `TestCategoryBreakdown`, `TestMonthlyTrend`) with 34 methods, 36 passing tests, markers, and order. |
 | D4 | **High** | Repository | No Excel test-case sheet (`.xlsx`) exists anywhere. Task 3 entirely missing. |
 | D5 | **High** | Repository | No external CSV data file. `data_driven` marker is orphaned. |
 | D6 | **High** | Repository | No setup video recorded or linked. Task 1 video deliverable is missing. |
@@ -187,7 +187,7 @@ pytest -v --tb=short
 | `docs/assignment_audit.md` (this file) | Created now |
 | Setup / demo video | **Completely missing** |
 | Module 2 test file (`tests/test_formatting.py`) | **Created and verified** (63 passed) |
-| Module 3 tests restructured (`tests/test_stats.py`) | Exists but inadequate |
+| Module 3 tests restructured (`tests/test_stats.py`) | **Created and verified** (36 passed) |
 | Test design notes (`docs/test_design_notes.md`) | **Created and verified** |
 | Excel test-case sheet (`docs/test_cases.xlsx`) | **Completely missing** |
 | External CSV data file (`tests/data/test_cases.csv`) | **Completely missing** |
