@@ -125,7 +125,7 @@ created: 8/8 workers
 | `pytest -v -m stats` | 36 passed |
 | `pytest -v -m data_driven` | 14 passed |
 | `pytest -v -m smoke` | 54 passed |
-| `pytest -v -m regression` | 113 passed |
+| `pytest -v -m regression` | 148 passed |
 
 ---
 
@@ -164,7 +164,7 @@ created: 8/8 workers
 |---|---|---|
 | Configure parallel execution | **PASS** | `pytest-xdist` 3.8.0 installed; `pytest -n auto --dist=loadscope` → 254 passed (8 workers) |
 | `-n auto` not baked in `addopts` | **PASS** | Sequential is default; parallel is opt-in. See `pytest.ini` comments explaining rationale. |
-| Test suites / groups defined | **PASS** | 6 markers: `smoke`(54), `regression`(113), `models`(35), `formatting`(63), `stats`(36), `data_driven`(14) |
+| Test suites / groups defined | **PASS** | 6 markers: `smoke`(54), `regression`(148), `models`(35), `formatting`(63), `stats`(36), `data_driven`(14) |
 | Data-driven parameterization | **PASS** | `test_formatting.py` and `test_stats.py` use `@pytest.mark.parametrize`. CSV parametrize in `test_data_driven.py` |
 | Execution ordering configured | **PASS** | `@pytest.mark.order(1–14)` on all assignment classes; verified sequential collection order |
 | Ordering creates no hidden dependencies | **PASS** | Every test uses independent fixtures; all groups pass independently |
@@ -235,7 +235,7 @@ pytest --collect-only -q -m formatting   # 63
 pytest --collect-only -q -m stats        # 36
 pytest --collect-only -q -m data_driven  # 14
 pytest --collect-only -q -m smoke        # 54
-pytest --collect-only -q -m regression   # 113
+pytest --collect-only -q -m regression   # 148
 pytest --collect-only -q                 # 254
 
 # Run the app

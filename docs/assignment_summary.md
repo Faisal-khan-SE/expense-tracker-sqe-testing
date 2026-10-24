@@ -1,4 +1,4 @@
-﻿# Assignment 3 Summary — Build Unit Test Automation Solution
+# Assignment 3 Summary — Build Unit Test Automation Solution
 
 | Field | Value |
 |---|---|
@@ -42,7 +42,7 @@
 | `stats` | Module 3 stats.py | 36 |
 | `data_driven` | Task 3 CSV-driven | 14 |
 | `smoke` | Critical path subset | 54 |
-| `regression` | All three modules + CSV | 113 |
+| `regression` | All three modules + CSV | 148 |
 
 ### Module 1 classes (test_module_models.py — 35 tests total)
 
@@ -102,7 +102,7 @@ pytest -v -m formatting   # 63 passed
 pytest -v -m stats        # 36 passed
 pytest -v -m data_driven  # 14 passed
 pytest -v -m smoke        # 54 passed
-pytest -v -m regression   # 113 passed
+pytest -v -m regression   # 148 passed
 ```
 
 ### Single-file commands

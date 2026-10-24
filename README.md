@@ -98,7 +98,7 @@ pytest -v -m data_driven
 # Smoke suite — critical-path tests only (54 tests)
 pytest -v -m smoke
 
-# Regression suite — all three modules + data-driven (113 tests)
+# Regression suite — all three modules + data-driven (148 tests)
 pytest -v -m regression
 ```
 

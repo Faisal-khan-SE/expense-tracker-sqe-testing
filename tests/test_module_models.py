@@ -12,6 +12,7 @@ from expense_tracker.models import (
 
 
 @pytest.mark.models
+@pytest.mark.regression
 @pytest.mark.smoke
 @pytest.mark.order(1)
 class TestFunctionValidateExpense:
@@ -80,6 +81,7 @@ class TestFunctionValidateExpense:
 
 
 @pytest.mark.models
+@pytest.mark.regression
 @pytest.mark.order(2)
 class TestClassExpense:
     """Unit tests for Expense dataclass and Expense.from_row method."""
@@ -123,6 +125,7 @@ class TestClassExpense:
 
 
 @pytest.mark.models
+@pytest.mark.regression
 @pytest.mark.order(3)
 class TestFunctionsAddAndGetExpense:
     """Unit tests for add_expense and get_expense functions."""
@@ -167,6 +170,7 @@ class TestFunctionsAddAndGetExpense:
 
 
 @pytest.mark.models
+@pytest.mark.regression
 @pytest.mark.order(4)
 class TestFunctionUpdateExpense:
     """Unit tests for update_expense function."""
@@ -207,6 +211,7 @@ class TestFunctionUpdateExpense:
 
 
 @pytest.mark.models
+@pytest.mark.regression
 @pytest.mark.order(5)
 class TestFunctionDeleteExpense:
     """Unit tests for delete_expense function."""
