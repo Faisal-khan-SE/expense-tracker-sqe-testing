@@ -137,7 +137,7 @@ created: 8/8 workers
 |---|---|---|
 | Open-source Python application | **PASS** | Flask Expense Tracker in repo |
 | Local development environment | **PASS** | `requirements.txt`, `requirements-dev.txt`, README setup steps |
-| Setup demonstration video | **FAIL — manual** | No video file in repo. See `docs/assignment_summary.md` §6 for recording script. |
+| Setup demonstration video | **PASS** | `docs/setup_demo.mp4` present (76.4 MB). |
 
 ### Task 2 — Test Design and Automated Unit Tests
 
@@ -180,7 +180,7 @@ created: 8/8 workers
 | D3 | High | **RESOLVED** | `test_stats.py` had 7 bare functions. Restructured into 4 classes (36 tests). |
 | D4 | High | **RESOLVED** | No Excel workbook. Created `docs/test_cases.xlsx` (16 rows, 11 columns). |
 | D5 | High | **RESOLVED** | No CSV test data. Created `tests/data/test_cases.csv` and `tests/test_data_driven.py`. |
-| D6 | High | **OPEN** | No setup video recorded. Must be done manually. |
+| D6 | High | **RESOLVED** | Setup video recorded and verified at `docs/setup_demo.mp4`. |
 | D7 | High | **RESOLVED** | No Module 2 tests. Created `tests/test_formatting.py` (63 tests). |
 | D8 | Medium | **RESOLVED** | `requirements.txt` contained test deps. Moved to `requirements-dev.txt` only. |
 | D9 | Low | **RESOLVED** | `test_validation.py` partially duplicates models tests. Kept as-is (harmless). |

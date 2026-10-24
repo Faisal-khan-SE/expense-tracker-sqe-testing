@@ -16,7 +16,7 @@
 | # | Deliverable | Path | Status |
 |---|---|---|---|
 | T1 | Project setup and environment | `README.md` Getting started section | DONE |
-| T1 | Setup video | See Section 6 | MANUAL STEP REQUIRED |
+| T1 | Setup video | `docs/setup_demo.mp4` | DONE (76.4 MB) |
 | T2 | Module 1 models unit tests | `tests/test_module_models.py` | DONE 35 tests |
 | T2 | Module 2 formatting unit tests | `tests/test_formatting.py` | DONE 63 tests |
 | T2 | Module 3 stats unit tests | `tests/test_stats.py` | DONE 36 tests |
@@ -154,9 +154,10 @@ Ordering dependency   : None. Order is advisory only.
 
 ---
 
-## 6. Setup Video — Manual Step Required
+## 6. Setup Video — Completed
 
-No video file is in the repository. Record this yourself and commit it.
+The demonstration video has been recorded and committed at `docs/setup_demo.mp4` (76.4 MB).
+It demonstrates the setup, test verification (`pytest -v`), and application launch.
 
 Recording checklist:
   1. Open terminal in project root
@@ -194,6 +195,6 @@ c3581bd  Task 1 & 4 + Module 1: Setup testing environment and Model unit tests
 
 | Item | Action |
 |---|---|
-| Setup video | Record and commit docs/setup_demo.mp4 manually |
+| Setup video | `docs/setup_demo.mp4` committed (76.4 MB) — DONE |
 | test_validation.py | Partially duplicates TestFunctionValidateExpense; kept but not counted for coverage |
 | Individual git contributions | Ensure each team member commits from their own account |

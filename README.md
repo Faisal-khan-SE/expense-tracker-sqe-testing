@@ -137,9 +137,14 @@ pytest --collect-only -q -m formatting  # 63 collected
 pytest --collect-only -q -m stats       # 36 collected
 pytest --collect-only -q -m data_driven # 14 collected
 pytest --collect-only -q -m smoke       # 54 collected
-pytest --collect-only -q -m regression  # 113 collected
+pytest --collect-only -q -m regression  # 148 collected
 pytest --collect-only -q                # 254 collected
 ```
+
+## Demonstration video
+
+A setup and testing verification demonstration video is available at `docs/setup_demo.mp4`.
+
 
 ## Testing the app manually
 
