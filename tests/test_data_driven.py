@@ -67,6 +67,7 @@ CSV_RECORDS = load_csv_test_cases()
 
 @pytest.mark.data_driven
 @pytest.mark.regression
+@pytest.mark.smoke
 @pytest.mark.order(14)
 class TestDataDrivenExpenseValidation:
     """Data-driven test suite executing cases loaded dynamically from external CSV."""

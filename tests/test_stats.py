@@ -38,6 +38,7 @@ def make_expense(id_: int, description: str, amount: float, category: str, expen
 
 @pytest.mark.stats
 @pytest.mark.regression
+@pytest.mark.smoke
 @pytest.mark.order(10)
 class TestTotalOf:
     """Unit tests for total_of function applying ECP and BVA.

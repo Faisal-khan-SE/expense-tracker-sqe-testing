@@ -23,6 +23,7 @@ from expense_tracker.formatting import (
 
 @pytest.mark.formatting
 @pytest.mark.regression
+@pytest.mark.smoke
 @pytest.mark.order(6)
 class TestFormatCurrency:
     """Unit tests for format_currency function applying ECP and BVA.
