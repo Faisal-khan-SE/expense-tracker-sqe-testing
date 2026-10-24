@@ -4,7 +4,7 @@
 |---|---|
 | **Project** | Flask Expense Tracker (`expense_tracker`) |
 | **Document Purpose** | SQE Assignment 3 — Task 2 Test Design Specification |
-| **Auditor / Author** | M-Ehtasham-SE (Lead QA / SQE Contributor) |
+| **Authors** | M.Ehtasham & M.Faisal |
 | **Audit Reference** | [assignment_audit.md](file:///d:/expense-tracker-sqe-testing/docs/assignment_audit.md) |
 | **Target Modules** | Module 1: `expense_tracker.models`<br>Module 2: `expense_tracker.formatting`<br>Module 3: `expense_tracker.stats` |
 | **Baseline Status** | 148 passing tests in baseline test suite (`pytest -v`) |

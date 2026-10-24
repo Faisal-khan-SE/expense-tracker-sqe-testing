@@ -2,9 +2,9 @@
 
 | Field | Value |
 |---|---|
-| **Auditor** | Antigravity (AI senior test engineer) |
+| **Auditor / Evaluators** | M.Ehtasham & M.Faisal |
 | **Initial audit** | 2026-10-23 (commit `c3581bd`, 148 tests) |
-| **Last verified** | 2026-10-24 (commit `212c09a`, 254 tests) |
+| **Last verified** | 2026-10-24 (commit `2b4770a`, 254 tests) |
 | **Branch** | `main` |
 | **Python** | 3.14.7 |
 | **pytest** | 8.4.1 · pytest-order 1.5.0 · pytest-xdist 3.8.0 |

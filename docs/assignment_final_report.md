@@ -1,7 +1,7 @@
 # Assignment 3 Final Acceptance Audit Report — Build Unit Test Automation Solution
 
 **Course:** Software Quality Engineering (SQE)  
-**Evaluator:** University SQE Senior Auditor (Strict Acceptance Mode)  
+**Evaluator / Team Members:** M.Ehtasham & M.Faisal  
 **Repository:** `M-Ehtasham-SE/expense-tracker-sqe-testing`  
 **Branch:** `main`  
 **Audit Timestamp:** 2026-10-24 14:38:00 UTC+5  

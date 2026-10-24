@@ -3,6 +3,7 @@
 | Field | Value |
 |---|---|
 | **Course** | Software Quality Engineering (SQE) |
+| **Team Members** | M.Ehtasham & M.Faisal |
 | **Repository** | `M-Ehtasham-SE/expense-tracker-sqe-testing` |
 | **Branch** | `main` |
 | **Python** | 3.14.7 |
