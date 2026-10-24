@@ -31,7 +31,7 @@ the two share no code.
 - Server-side form validation, flash-message toasts, inline delete confirmation
 - Responsive layout (card list on mobile, table on larger screens)
 - Automatic light/dark mode based on system preference
-- 113 automated tests (pytest) covering stats, validation, routes, the export engine and the Export Center
+- 254 automated tests (pytest) covering models, formatting, stats, CSV-driven validation, routes, and the export engine
 
 ## Requirements
 
@@ -66,17 +66,79 @@ recreated empty on the next request.
 
 ```bash
 pip install -r requirements-dev.txt
+```
 
-# Run full test suite (254 passed)
+### Full suite (sequential, default)
+
+```bash
 pytest -v
+# 254 passed  (Python 3.14.7 · pytest 8.4.1 · pytest-order 1.5.0)
+```
 
-# Run by markers / suites
-pytest -m models -v         # Models tests (Module 1)
-pytest -m formatting -v     # Formatting tests (Module 2)
-pytest -m stats -v          # Statistics tests (Module 3)
-pytest -m data_driven -v    # CSV-driven automated tests (Task 3)
-pytest -m smoke -v          # Quick critical smoke tests
-pytest -m regression -v     # Full regression test suite
+Sequential mode is the default. `pytest-order` markers (`@pytest.mark.order(N)`) are
+fully respected so classes run in the documented order (models → formatting → stats →
+data-driven). Tests are isolated — every DB-backed test gets its own temp SQLite file
+via the `app` fixture in `conftest.py`; no test shares state with another.
+
+### Run by module / marker group
+
+```bash
+# Module 1 — models (35 tests: 5 ordered classes, ECP + BVA)
+pytest -v -m models
+
+# Module 2 — formatting (63 tests: 4 classes, 33 methods + parametrize)
+pytest -v -m formatting
+
+# Module 3 — stats (36 tests: 4 classes, 34 methods + parametrize)
+pytest -v -m stats
+
+# Task 3 — CSV-driven tests (14 tests from tests/data/test_cases.csv)
+pytest -v -m data_driven
+
+# Smoke suite — critical-path tests only (54 tests)
+pytest -v -m smoke
+
+# Regression suite — all three modules + data-driven (113 tests)
+pytest -v -m regression
+```
+
+### Parallel execution (Task 4)
+
+`-n auto` is **not** in `addopts` by design: parallel mode is opt-in so that
+`pytest-order` markers remain effective in normal runs and fresh CI environments
+don't require additional flags to get deterministic ordering.
+
+```bash
+# Parallel — uses all CPU cores; --dist=loadscope keeps each class on one worker
+pytest -n auto --dist=loadscope -v
+
+# Parallel — specific group
+pytest -m models -n auto --dist=loadscope -v
+```
+
+> **Ordering note:** `pytest-order` is advisory in parallel mode. Class-level order is
+> preserved *within* each worker, but cross-class order across workers is non-deterministic.
+> Unit tests must not rely on ordering for correctness — ordering is documentation only.
+
+### Single test module
+
+```bash
+pytest -v tests/test_module_models.py
+pytest -v tests/test_formatting.py
+pytest -v tests/test_stats.py
+pytest -v tests/test_data_driven.py
+```
+
+### Verify collected test counts
+
+```bash
+pytest --collect-only -q -m models       # 35 collected
+pytest --collect-only -q -m formatting  # 63 collected
+pytest --collect-only -q -m stats       # 36 collected
+pytest --collect-only -q -m data_driven # 14 collected
+pytest --collect-only -q -m smoke       # 54 collected
+pytest --collect-only -q -m regression  # 113 collected
+pytest --collect-only -q                # 254 collected
 ```
 
 ## Testing the app manually
